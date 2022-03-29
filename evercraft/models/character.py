@@ -26,6 +26,18 @@
 #     def get_name(self):
 #         self.name = name
 
+#character with name as an object
+# class Character():
+#     def __init__(self, obj = {"name":"Bob"}):
+#         if obj:
+#             self.name = obj["name"]
+
+#     def set_name(self, name):
+#         self.name = name
+
+#     def get_name(self):
+#         return self.name
+
 class Character():
     def __init__(self, obj = {"name":"Bob"}):
         if obj:

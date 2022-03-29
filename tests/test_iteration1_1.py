@@ -35,4 +35,28 @@ def test_createGetCharacterName():
     }
     c = Character(obj)
     assert c.get_name() == character_name
+
+#create character with more than one char
+def test_createMoreThanOneCharacter():
+   c1 = Character({"name":"Bob"})
+   c2 = Character()
+   c2.set_name("Bill") 
+   assert c1.get_name() != c2.get_name() 
   
+#create multiple characters
+def test_makeLotsOfCharacters():
+    names = {
+        "Abed",
+        "Shirley",
+        "Vicky",
+        "Britta",
+        "Annie",
+        "Troy"
+    }
+
+    characters = []
+    for name in names:
+        c = Character({"name" : name})
+        characters.append(c)
+
+    assert len(characters) == len(names)
