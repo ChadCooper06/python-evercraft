@@ -1,6 +1,7 @@
 import pytest
 from evercraft.models.character import Character
 
+
 #As a character I want to have a name 
 # so that I can be distinguished from other characters(multiple)
 #can get and set Name
