@@ -9,3 +9,5 @@ print(c.name, c.alignment)
 setattr(c, 'name', 'Chad')
 setattr(c, 'alignment', "BADBADNOTGOOD")
 print(c.name, c.alignment)
+
+

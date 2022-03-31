@@ -1,61 +1,18 @@
 # this is where your character code will go
 
-#create a character--passed
-# def Character():
-#     pass
-
-#create a character class--passed
-# class Character():
-#     def __init__(self):
-#         self.data = "character"
-
-#character class with a name--passed
-# class Character():
-#     def __init__(self, name):
-#          self.name = "name"
-
-#character named something--passed
-# class Character():
-#     def __init__(self, name = "Bob"):
-#         print (name)
-#         self.name = name
-
-#     def set_name(self, name):
-#         self.name = name
-
-#     def get_name(self):
-#         self.name = name
-
-#character with name as an object--passed
-# class Character():
-#     def __init__(self, obj = {"name":"Bob"}):
-#         if obj:
-#             self.name = obj["name"]
-
-#     def set_name(self, name):
-#         self.name = name
-
-#     def get_name(self):
-#         return self.name
-
-# def set_var(): {
-#     "name" : name,
-#     "alignment" : alignment,
-#     "armor" : armor_level
-# }
-# def get_var(): {
-#     "name" : name,
-#     "alignment" : alignment,
-#     "armor" : armor_level
-# }
-
 class Character:
     def __init__(self, obj):
         self.name = obj["name"],
         self.alignment = obj["alignment"],
         self.armor = obj["armor"],
         self.HP = obj["HP"],
-        self.attack = obj["attack"]
+        self.attack = obj["attack"],
+        self.Str = obj["Str"],
+        self.Dex = obj["Dex"],
+        self.Con = obj["Con"],
+        self.Wis = obj["Wis"],
+        self.Int = obj["Int"],
+        self.Cha = obj["Cha"]
 #helper fns that get and set name
     def set_name(self, name):
         self.name = name
@@ -85,11 +42,15 @@ class Character:
     def get_hit_points(self):
         return self.HP
 
+#determine if alive or not
+    def alive(self):
+        if self.HP <= 0:
+            return False
+
+#determine if Character has the 6 abilities
+        
+
 # #function to ATTACK
-#     def set_attack(self, attack):
-#         self.attack = attack
-
-
 def do_attack(c1, c2, roll):
     if roll == 20:
         return True
@@ -99,15 +60,25 @@ def do_attack(c1, c2, roll):
         return True
 
 # function to doDmg
+def dmg(c2, roll):
+    hit = 1
+    if roll == 20:
+        hit = hit * 2
+    c2.HP = c2.HP - hit
 
+# #function if dead
+# def dead(c2, alive):
+#     if c2.HP <= 0:
+#         c2.alive is c2.HP
+        
 
-# def xpReduce(attack, c2):
-#     if attack == "Critical Hit":
-#         return c2.XP - 2
+# def did_dmg(attack, c2):
+#     if roll == True:
+#         return c2.HP - 2
 #     elif attack == "Missed":
-#         return c2.XP
+#         return c2.HP
 #     else attack == "Hit":
-#         return c2.XP - 1
+#         return c2.HP - 1
 
 # def dmg(atkr, dfind):
 #     if c1.attack > c2.armor:
@@ -116,3 +87,9 @@ def do_attack(c1, c2, roll):
 #def hit(c1, c2):
     #if "Hit" == True:
         #c2.HP = c2.HP-1
+
+# def dead(c2):
+#     if c2.life != dead:
+#         return False
+#     else:
+#         return True
