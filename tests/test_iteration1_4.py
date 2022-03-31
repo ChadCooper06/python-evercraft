@@ -1,5 +1,5 @@
 import pytest
-from evercraft.models.character import Character, attack, dmg
+from evercraft.models.character import Character, do_attack
 
 #As a combatant I want to be able to attack other combatants so that I can survive to fight another day
 #roll a 20 sided die (don't code the die)

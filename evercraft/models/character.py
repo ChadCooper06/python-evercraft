@@ -51,12 +51,11 @@
 
 class Character:
     def __init__(self, obj):
-        if obj:
-            self.name = obj["name"],
-            self.alignment = obj["alignment"],
-            self.armor = obj["armor"],
-            self.HP = obj["HP"],
-            self.attack = obj["attack"]
+        self.name = obj["name"],
+        self.alignment = obj["alignment"],
+        self.armor = obj["armor"],
+        self.HP = obj["HP"],
+        self.attack = obj["attack"]
 #helper fns that get and set name
     def set_name(self, name):
         self.name = name
@@ -91,17 +90,28 @@ class Character:
 #         self.attack = attack
 
 
-def attack(c2, roll):
+def do_attack(c1, c2, roll):
     if roll == 20:
-        return "Critical Hit"
+        return True
     elif roll < c2.armor:
-        return "Missed"
+        return False
     elif roll >= c2.armor:
-        return "Hit"
+        return True
 
-def dmg(c1, c2):
-    if c1.attack > c2.armor:
-        return c2.HP-1
+# function to doDmg
+
+
+# def xpReduce(attack, c2):
+#     if attack == "Critical Hit":
+#         return c2.XP - 2
+#     elif attack == "Missed":
+#         return c2.XP
+#     else attack == "Hit":
+#         return c2.XP - 1
+
+# def dmg(atkr, dfind):
+#     if c1.attack > c2.armor:
+#         return c2.HP-1
 
 #def hit(c1, c2):
     #if "Hit" == True:

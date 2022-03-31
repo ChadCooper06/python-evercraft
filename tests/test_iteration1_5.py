@@ -1,5 +1,5 @@
 import pytest
-from evercraft.models.character import Character, attack, dmg
+from evercraft.models.character import Character, do_attack
 
 #As an attacker I want to be able to damage my enemies so that they will die and I will live
 
@@ -9,8 +9,9 @@ from evercraft.models.character import Character, attack, dmg
 
 #when hit points are 0 or fewer, the character is dead
 
-
+#any attack that hits
 def test_attackHits():
+    # arrange
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
@@ -18,13 +19,20 @@ def test_attackHits():
         "HP": 5,
         "attack": 8
     }
+    roll = 18
     c1 = Character(obj)
     c2 = Character(obj)
     c1.attack = 9
     c2.armor = 7
     c2.HP = 5
-    assert c1.attack >= c2.armor
+    
+    # act
+    result = do_attack(c1, c2, roll) 
 
+    # assert
+    assert result == True
+
+#critical attack
 def test_attackCrit():
     obj = {
         "name" : "Bob",
@@ -33,9 +41,8 @@ def test_attackCrit():
         "HP": 5,
         "attack": 8
     }
+    roll = 20
     c1 = Character(obj)
     c2 = Character(obj)
-    c1.attack = 20
-    c2.armor = 10
-    c2.HP = 2
-    assert c1.attack > c2.armor
+    assert do_attack(c1, c2, roll)
+
