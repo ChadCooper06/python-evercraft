@@ -52,5 +52,5 @@ def test_abilities():
 #         "attack": 11,
 #     }
 #     c1 = Character(obj)
-#     c1.Str = 13
-#     assert c1.Str == 
+#     c1.Str = 12
+#     assert c1.Str == range(1, 20)
