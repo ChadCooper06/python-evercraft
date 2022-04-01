@@ -12,8 +12,6 @@ def test_didDoDmg():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 11
     }
     roll = 18
@@ -48,8 +46,6 @@ def test_heDied():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 11
     }
     c1 = Character(obj)

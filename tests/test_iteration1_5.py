@@ -15,8 +15,6 @@ def test_attackHits():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 8
     }
     roll = 18
@@ -37,8 +35,6 @@ def test_attackCrit():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 8
     }
     roll = 20

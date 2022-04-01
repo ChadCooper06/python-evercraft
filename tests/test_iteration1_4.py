@@ -19,8 +19,6 @@ def test_attackLess():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 8
     }
     c1 = Character(obj)
@@ -32,8 +30,6 @@ def test_attackHigh():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 8
     }
     c1 = Character(obj)

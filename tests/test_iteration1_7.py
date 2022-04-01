@@ -33,22 +33,24 @@ from evercraft.models.character import Character, do_attack, dmg
     20:	+5
 }"""
 
-
+# testing if the character created has the abilities and they're all defaults
 def test_abilities():
     obj = {
         "name" : "Bob",
         "alignment" : "Good",
-        "armor" : 10,
-        "HP": 5,
         "attack": 11,
-		"Str": 10,
-		"Dex": 10,
-		"Con": 10,
-		"Wis": 10,
-		"Int": 10,
-		"Cha": 10
     }
+    c1 = Character(obj)
 
-	c1 = Character(obj)
-	c1.Str = 14
-	assert c1 == c1.Str
+    assert c1.Str == 10 and c1.Dex == 10 and c1.Con == 10 and c1.Wis == 10 and c1.Int == 10 and c1.Cha == 10
+
+# testing if abilities have a range
+# def test_ability_range():
+#     obj = {
+#         "name" : "Bob",
+#         "alignment" : "Good",
+#         "attack": 11,
+#     }
+#     c1 = Character(obj)
+#     c1.Str = 13
+#     assert c1.Str == 
