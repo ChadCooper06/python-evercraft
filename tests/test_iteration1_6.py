@@ -8,6 +8,7 @@ from evercraft.models.character import Character, do_attack, dmg
 #If a roll is a natural 20 then a critical hit is dealt damage x2
 #when hit points are 0 or fewer, the character is dead
 
+#hit does 1 damage
 def test_didDoDmg():
     obj = {
         "name" : "Bob",
@@ -24,6 +25,7 @@ def test_didDoDmg():
     dmg(c2,roll)
     assert new_HP == c2.HP
 
+#nat 20 means double damage
 def test_didDoubleDmg():
     obj = {
         "name" : "Bob",
@@ -42,6 +44,7 @@ def test_didDoubleDmg():
     dmg(c2,roll)
     assert new_HP == c2.HP
 
+#character has died-so sad :(
 def test_heDied():
     obj = {
         "name" : "Bob",
